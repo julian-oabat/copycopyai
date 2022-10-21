@@ -1,0 +1,12 @@
+selenium:
+  image: selenium/standalone-chrome:104.0
+  ports:
+    - "4443:4444"
+  volumes:
+    - /dev/shm:/dev/shm
+    - ${APP_CODE_PATH_HOST}/storage/app:/storage/app
+    - ${APP_CODE_PATH_HOST}/storage/app/stocklists:/home/seluser/Downloads
+  environment:
+    - SE_NODE_MAX_SESSIONS=36
+    - SCREEN_WIDTH=2000
+    - SCREEN_HEIGHT=2000
